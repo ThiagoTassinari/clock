@@ -8,18 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clock UI Dark</title>
     <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./container.css">
 </head>
 
 <body>
-    <div class="clock">
-        <div class="hour">
-            <div class="hr" id="hr"></div>
+    <div class="container">
+        <h1>Light / Dark</h1>
+        <div class="toggle">
+            <input type="checkbox" id="switch" name="theme">
+            <label for="switch">Toggle</label>
         </div>
-        <div class="min">
-            <div class="mn" id="mn"></div>
-        </div>
-        <div class="sec">
-            <div class="sc" id="sc"></div>
+
+        <div class="clock">
+            <div class="hour">
+                <div class="hr" id="hr"></div>
+            </div>
+            <div class="min">
+                <div class="mn" id="mn"></div>
+            </div>
+            <div class="sec">
+                <div class="sc" id="sc"></div>
+            </div>
         </div>
     </div>
 
@@ -34,12 +43,14 @@
             let hh = day.getHours() * 30;
             let mm = day.getMinutes() * deg;
             let ss = day.getSeconds() * deg;
-    
+
             hr.style.transform = `rotateZ(${(hh) + (mm/12)}deg)`;
             mn.style.transform = `rotateZ(${mm}deg)`;
             sc.style.transform = `rotateZ(${ss}deg)`;
         })
     </script>
+
+    <script src="scripts.js"></script>
 </body>
 
 </html>
